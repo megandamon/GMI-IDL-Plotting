@@ -1,0 +1,23 @@
+module load tool/idl-7.1
+ulimit -s 6000000
+ulimit -v unlimited
+idl
+!path="/home/ssteenro/idl/:"+!path
+.compile ncdf_info
+.r zonalavg.pro
+.r globe_cont_local
+.r GmiReaderTool
+.r createContoursFromArray
+.r GmiStringOperations.pro
+.r GmiNetCdfTools.pro
+.r GmiDataTools.pro
+.r GmiPlotTools.pro
+.r GmiColumn.pro
+.r GmiAmonthly.pro
+.r GmiOverpass2.pro
+.r GmiStations.pro
+.r GmiPlotEmissions.pro
+xlct
+
+GmiPlotEmissions, "/discover/nobackup/projects/gmi/gmidata2/input/emissions/combo/emisc_2015_m_1x1.25_IAVanthQFED2012to14withAero.1x1.25.nc", "/discover/nobackup/projects/gmi/gmidata2/input/emissions/combo/emisc_2015_m_1x1.25_IAVanthQFEDwithAero.nc", "October", 'eta_dim', 'IAVanthQFED2012to14withAero', 'IAVanthQFEDwithAero','1', '1', '0'
+

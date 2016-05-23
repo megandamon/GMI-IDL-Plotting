@@ -1,0 +1,398 @@
+module load tool/idl-7.1
+ulimit -s 6000000
+ulimit -v unlimited
+idl
+!path="/home/ssteenro/idl/:"+!path
+.compile ncdf_info
+.r zonalavg.pro
+.r globe_cont_local
+.r GmiReaderTool
+.r createContoursFromArray
+.r GmiStringOperations.pro
+.r GmiNetCdfTools.pro
+.r GmiDataTools.pro
+.r GmiPlotTools.pro
+.r GmiColumn.pro
+.r GmiAmonthly.pro
+.r GmiOverpass2.pro
+.r GmiStations.pro
+.r GmiDoAllPlots.pro
+xlct
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/newChem/kppFull6hr/", "/discover/nobackup/mrdamon/PlotLinks/newChem/smvFull6hr/","gmic_kppFull6hr","gmic_smvFull6hr",'2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/newChem/kppFull1hr/", "/discover/nobackup/mrdamon/PlotLinks/newChem/smvFull1hr/","gmic_kppFull1hr","gmic_smvFull1hr",'2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/FastJX-RepairOD-Tests/HFFIgac2-Reproduce/", "/archive/anon/pub/gmidata2/users/mrdamon/FastJX-RepairOD-Tests/HFFIgac2-FixFastJX/", 'gmic_HFFIgac2-Reproduce", 'gmic_HFFIgac2-FixFastJX','2010','2010',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_May_21_17_23_27_0409_HFFIgac2-Reproduce/cloudFraction_lightNO_inOverpass2/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", 'gmic_HFFIgac2-Reproduce', 'gmic_HindcastFFIgac2', '2010','2010',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/mechChange", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/gmi_randomCloudOverlap/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/", 'gmic_HindcastFFIgac2-RanCloud', 'gmic_HindcastFFIgac2-HighRes', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/newChem/kppNoEmiss1hr/", "/discover/nobackup/mrdamon/PlotLinks/newChem/smvNoEmiss1hr/", "gmic_kppNoEmiss1hr", "gmic_smvNoEmiss1hr", '2007', '2007', 1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/newChem/kppNoEmiss6hr/", "/discover/nobackup/mrdamon/PlotLinks/newChem/smvNoEmiss6hr/", "gmic_kppNoEmiss6hr", "gmic_smvNoEmiss6hr", '2007', '2007', 1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/oldChem/kppNoEmiss1hr/", "/discover/nobackup/mrdamon/PlotLinks/oldChem/smvNoEmiss1hr/", "gmic_kppNoEmiss1hr", "gmic_smvNoEmiss1hr", '2007', '2007', 1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/PlotLinks/oldChem/kppNoEmiss6hr/", "/discover/nobackup/mrdamon/PlotLinks/oldChem/smvNoEmiss6hr/", "gmic_kppNoEmiss6hr", "gmic_smvNoEmiss6hr", '2007', '2007', 1,1
+
+GmiDoAllPlots, "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/kppNoIsop/", "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/smvNoIsop/", "gmic_4x5", "gmic_4x5", '2007', '2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/kppNoEmiss/", "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/smvNoEmiss/", "gmic_4x5", "gmic_4x5", '2007', '2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/kpp6hr/", "/discover/nobackup/ccruz/devel/GMIKPP/gmi_ESMF5ready/gmi_gsfc/runs/smv6hr/", "gmic_4x5", "gmic_4x5", '2007', '2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/gmi_randomCloudOverlap/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/", 'gmic_HindcastFFIgac2-RanCloud', 'gmic_HindcastFFIgac2NewCode', '1990','1990',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2NewCode', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/oldCodeKpp/", "/discover/nobackup/mrdamon/CarlosResults/oldCodeSmv/", 'gmic_4x5oldCodeKpp', 'gmic_4x5oldCodeSmv', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/kpp_traps/", "/discover/nobackup/mrdamon/CarlosResults/smv_traps/", 'gmic_4x5kppTraps', 'gmic_4x5smvTraps', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/kppBare/", "/discover/nobackup/mrdamon/CarlosResults/smvBare/", 'gmic_4x5kppBare', 'gmic_4x5smvBare', '2007','2007',1,1
+
+
+GmiDoAllPlots, "/gpfsm/dnb04/projects/p02/gmidata2/users/mrdamon/WORKFLOW-discover/OptDepth-Testing-Merra/MERRA-1/", "/gpfsm/dnb04/projects/p02/gmidata2/users/mrdamon/WORKFLOW-discover/OptDepth-Testing-Merra/MERRA-2/", 'gmic_MERRA1', 'gmic_MERRA2', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/kppBare/", "/discover/nobackup/mrdamon/CarlosResults/smvBare/", 'gmic_4x5kppBare', 'gmic_4x5smvBare', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/kpp_traps/", "/discover/nobackup/mrdamon/CarlosResults/smv_traps/", 'gmic_4x5kppTraps', 'gmic_4x5smvTraps', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/CarlosResults/kppBare/", "/discover/nobackup/mrdamon/CarlosResults/smvBare/", 'gmic_4x5kppBare', 'gmic_4x5smvBare', '2007','2007',1,1
+
+GmiDoAllPlots, "/gpfsm/dnb02/ccruz/devel/GMIKPP/foo2/gmi_gsfc/runs/kppBare/", "/gpfsm/dnb02/ccruz/devel/GMIKPP/foo2/gmi_gsfc/runs/smvBare/", 'gmic_4x5', 'gmic_4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/new_clone_kpp/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/new_clone/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/KPP_Effort/", "/discover/nobackup/mrdamon/Source/KPP_Effort/", 'gmic_4x5', 'gmic_4x5KPP', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDaySetkinKcalc/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_GoodCode-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDay/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/", 'gmic_Master-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/KPP_Effort/", "/discover/nobackup/mrdamon/Source/KPP_Effort/", 'gmic_4x5', 'gmic_4x5KPP', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDaySetkinKcalc/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_GoodCode-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDayKBLOOP1/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/OneDay/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/OneDay/", 'gmic_Merged-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/", 'gmic_Master-MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MERRA1/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/good_code/", 'gmic_MERRA1', 'gmic_GoodCode-MERRA1', '2015','2015',1,1
+
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MERRA1/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/gmi_merge_foo_smv/", 'gmic_MERRA1', 'gmic_Master-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MERRA1/", "/archive/anon/pub/gmidata2/users/mrdamon/MERRA2/", 'gmic_MERRA1', 'gmic_MERRA2', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MERRA1/", "/archive/anon/pub/gmidata2/users/mrdamon/MERRA2/", 'gmic_MERRA1', 'gmic_MERRA2', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2014','2014',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2013','2013',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2012','2012',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2011','2011',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2010','2010',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2009','2009',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2008','2008',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_26_11_59_50_0464_HindcastFFIgac2-HighRes/AFTER_Steves_changes_to_move_to_git", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2014','2014',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/HindcastBr-O3DryDep_test/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_HindcastBr-O3DryDep', 'gmic_HindcastFFIgac2-HighRes', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2006','2006',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/master_test/DeliveredFromJules/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_Master-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_26_11_59_50_0464_HindcastFFIgac2-HighRes/AFTER_Steves_changes_to_move_to_git", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_HindcastFFIgac2-HighResAug31', 'gmic_HindcastFFIgac2-HighRes', '2014','2014',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_26_11_59_50_0464_HindcastFFIgac2-HighRes/AFTER_Steves_changes_to_move_to_git", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2014','2014',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_26_11_59_50_0464_HindcastFFIgac2-HighRes/AFTER_Steves_changes_to_move_to_git", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2014','2014',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast2004FFIgac2-HighRes/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes/", 'gmic_Hindcast2004FFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2004','2004',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MERRA1/", "/archive/anon/pub/gmidata2/users/mrdamon/MERRA2/", 'gmic_MERRA1', 'gmic_MERRA2', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/master_test", 'gmic_HindcastFFIgac2-HighRes', 'gmic_Master-MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_24_16_33_17_0409_MERRA1/AFTER_Steves_changes_to_move_to_git-MERRA2/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_MERRA1', '2015','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_22_16_43_14_0009_HindcastFFIgac2Merra1-HighRes/HindcastBr-O3DryDep-Merra2_Dev/completed/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Merra2-HighRes/", 'gmic_HindcastFFIgac2Merra1-HighRes', 'gmic_HindcastFFIgac2Merra2-HighRes', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_22_15_49_41_0991_Hindcast2004FFIgac2-HighRes-Test/AFTER_Steves_changes_to_move_to_git/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_Hindcast2004FFIgac2-HighRes-Test', '2004','2004',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2016_Mar_21_11_59_34_0661_Hindcast2004FFIgac2-HighRes-Test/HindcastBr-O3DryDep-Merra2_Dev/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_Hindcast2004FFIgac2-HighRes-Test', '2004','2004',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/ENSO_QFED/QFED-MERRA2", "/archive/anon/pub/gmidata2/users/mrdamon/ENSO_QFED/QFED-MERRA2avg/", 'gmic_QFED-MERRA2', 'gmic_QFED-MERRA2avg', '2015','2015',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/ENSO_QFED_badSurfEmiss/QFED-MERRA2avg/", "/archive/anon/pub/gmidata2/users/mrdamon/ENSO_QFED/QFED-MERRA2avg/", 'gmic_QFED-MERRA2avg', 'gmic_QFED-MERRA2avg', '2015','2015',1,1
+
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/MERRA2_plotting/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_QFED-MERRA2', '2014','2015',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirSmv", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirKpp/", 'gmic_HindcastBrSmv', 'gmic_HindcastBrKpp', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirSmv", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirKppa/", 'gmic_HindcastBrSmv', 'gmic_HindcastBrKppa', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirSmv", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/KPPA/workDirKppaC/", 'gmic_HindcastBrSmv', 'gmic_HindcastBrKppaC', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", 'gmic_HindcastBrPROD', 'gmic_HindcastBrKPP', '1999','1999',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1997','1997',1,1
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1997','1997',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1997','1997',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/chemistry-only/KPP", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/chemistry-only/SMV/", 'gmic_4x5', 'gmic_4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/ChemEmissOnlyRuns/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/ChemEmissOnlyRuns/SMV/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/KbloopTests/KBLOOP25/", "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", 'gmic_4x5SMV', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/OneTimeStepRuns/SMV/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss/SMV/", 'gmic_4x5', 'gmic_4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2015_Nov_18_16_28_29_0828_HindcastBr/HindcastBr-O3DryDep/completed", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastBr', 'gmic_HindcastBr', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1997','1997',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss-1month/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss-1month/SMV/", 'gmic_4x5KPP', 'gmic_4x5SMV', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss/KPP/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/with-surf-emiss/SMV/", 'gmic_4x5', 'gmic_4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/GMI__2015_Nov_18_16_28_29_0828_HindcastBr/HindcastBr-O3DryDep/completed", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastBr', 'gmic_HindcastBr', '1990','1990',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1997','1997',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-HighRes", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastBr/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastBr', '1991','1991',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Apr/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Feb/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Feb/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Sep/SMV", "/discover/nobackup/mrdamon/WORKFLOW-discover/SmvgearMonthly/Sep/KPP", 'gmic_4x5SMV', 'gmic_4x5KPP', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Srinath/smv1dy/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Srinath/kpp1dy/", 'gmic_smv1dy_4x5', 'gmic_kpp1dy_4x5', '2007','2007',1,1,1,'mar'
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Srinath/smv1dy/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Srinath/kpp1dy/", 'gmic_smv1dy_4x5', 'gmic_kpp1dy_4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/smv1dy/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/kpp1dy-rodas4/", 'gmic_4x5smv', 'gmic_4x5kpp-rodas4', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/initconds/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/smv1dy/", 'gmic_aura4', 'gmic_4x5smv', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/initconds/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/kpp1dy/", 'gmic_aura4', 'gmic_4x5kpp', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/smv1dy/", "/discover/nobackup/mrdamon/WORKFLOW-discover/Carlos-Exp/kpp1dy/", 'gmic_4x5smv', 'gmic_4x5kpp', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI-KPP-Conversions/gmiSMV-1TS/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI-KPP-Conversions/gmiKPP-1TS/", 'gmic_4x5smv', 'gmic_4x5kpp', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI-KPP-Conversions/gmiSMV-1TS/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI-KPP-Conversions/gmiSMV-1TS/", 'gmic_4x5smv', 'gmic_4x5smv', '2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/aartsen/HindcastFFIgac2-HighRes/", "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastFFIgac2-HighRes-Apples/", 'gmic_HindcastFFIgac2-HighRes', 'gmic_HindcastFFIgac2-HighRes', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/credder/devel/gmi/ifort_11_0_083-impi_3_2_2_006/gmi_gsfc/runtest", "/discover/nobackup/credder/devel/gmi/gfortran_4.9.1-mvapich2_2.0/gmi_gsfc/runtest/", 'Intel_11_month', 'gfortran_4_9_month', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/credder/devel/gmi/ifort_11_0_083-impi_3_2_2_006/gmi_gsfc/runtest", "/discover/nobackup/credder/devel/gmi/ifort_14.0.3.174-mvapich2_2.0/gmi_gsfc/runtest/", 'Intel_11_month', 'Intel_14_month', '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneMonth2DegBatch.1409083340/bin/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneMonth_2x2.5", 'HindcastFFIgac2', 'HindcastFFIgac2', '2000','2000',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneMonth2DegBatch.1409066140/bin/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneMonth_2x2.5", 'HindcastFFIgac2', 'HindcastFFIgac2', '2000','2000',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneMonth2DegBatch.1408570955/bin/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneMonth_2x2.5", 'HindcastFFIgac2', 'HindcastFFIgac2', '2000','2000',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneDay_4x5-beforeKareem/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneDay_4x5-afterKareem-beforeGIT/", '4x5', '4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDayBatch.1404771698/bin/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDayBatch.1404766210/bin", '4x5', '4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/nfs3m/archive/cache03/projects/g_proj3/anon/pub/gmidata2/users/steenrod/MERRA1x1/", "/archive/anon/pub/gmidata2/users/aartsen/HindcastFFIgac2-HighRes/", 'MERRA1x1', 'HindcastFFIgac2-HighRes', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneDay_4x5-beforeKareem/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDayBatch.1398017423/bin", '4x5', '4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/baseline/OneDay_4x5-afterKareem-beforeGIT/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDayBatch.1397249172/bin/", '4x5', '4x5', '2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GmiGIT_1month_oldSmvgear/", "HindcastFFIgac2", "HindcastFFIgac2", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GmiGIT_1month/", "HindcastFFIgac2", "HindcastFFIgac2", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GmiGIT_1month_oldSmvgear/", "HindcastFFIgac2", "HindcastFFIgac2", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GmiGIT_1month/", "HindcastFFIgac2", "HindcastFFIgac2", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/3MonthTest/", "HindcastFFIgac2", "HindcastFFIgac2", '2007','2007',1,1
+
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/TempArea-DeleteMe/Old/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/TempArea-DeleteMe/New/", "G4LLK4x5", "G4LLK4x5", '2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun/", "/discover/nobackup/mrdamon/WORKFLOW-discover/SteveCode_HindcastFFIgac2", "HindcastFFIgac2", "HindcastFFIgac2", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDay.1388159920/bin/", "/discover/nobackup/mrdamon/Source/GMI_source/GitGmiTest/GmiSmvgearRefactor2/ddts/runs/OneDay.1388161252/bin/", "OneDay4x5", "OneDay4x5", '2007','2007',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastFFIgac2-Rerun", "HindcastFFIgac2", "HindcastFFIgac2", '2012','2012',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65totacet/", "fastJX", "fastJX65totacet", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastBestCode/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastBadBug/", "HindcastBestCode", "HindcastBadBug", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastBestCode/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastBestCode", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastBadBug/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastBadBug", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65totacet/", "fastJX", "fastJX65totacet", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65totacet/", "fastJX65", "fastJX65totacet", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65/", "fastJX", "fastJX65", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/ssFixAddressErrorFastJ/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastssFix", "Hindcast", '1996','1996',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/ssFixAddressErrorFastJ/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "HindcastFFssFix", "HindcastFF", '1996','1996',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastFF", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/SanityCheck/Hindcast-Oct93/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastSanity", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastFF", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65/", "fastJX", "fastJX65", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastFF", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/SanityCheck/Hindcast-Oct93/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastSanity", "Hindcast", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3Igac/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3/","Hindcast3Igac", "Hindcast3", '1991','1991',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI__2013_Mar_28_12_32_14_0321_Hindcast3Igac/jkTrunk_with_Intel11_compiler-m02/completed", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3/","Hindcast3Igac", "Hindcast3", '1995','1995',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFFNoLight", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","HindcastFFNoLight", "HindcastFF", '2009','2009',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/Other/HindcastOrig", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/","HindcastOrig", "Hindcast", '1994','1994',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "/home/mrdamon/MERRA_BAD","MERRA", "MERRABAD", '2011','2011',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/Other/HindcastFFOrig", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","HindcastFFOrig", "HindcastFF", '1994','1994',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI__2013_Mar_06_20_38_09_0340_Hindcast/jkTrunk_with_Intel11_compiler-m02", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/","HindcastReRun", "Hindcast", '1992','1992',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastReRun/2001_GoodMetData/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/","HindcastReRun", "Hindcast", '2001','2001',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastFFReRun/Jan1993/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","HindcastFFRR", "HindcastFF", '1993','1993',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastFFReRun/Dec1992/1992/1231Repeat/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","HindcastFF1231", "HindcastFF", '1992','1992',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastFFReRun/Dec1992/1992/SteveTag/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","HindcastFFSteve", "HindcastFF", '1992','1992',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastReRun/2000_GoodMetData/", "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastReRun/2000_HindBadFinalRec/","Hindcast", "HindBadFinalRec", '2000','2000',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/discover/nobackup/mrdamon/WORKFLOW-discover/HindcastFFReRun/Dec1992/","HindcastFF", "HindcastFFR2", '1992','1992',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3/","HindcastFF", "Hindcast3", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","Hindcast", "HindcastFF", '2001','2001',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3/","HindcastFF", "Hindcast3", '1992','1992',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast3/","HindcastFF", "Hindcast3", '1990','1990',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/","Hindcast", "HindcastFF", '2000','2000',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/BadRuns/", "Hindcast", "Hindcast", '2002','2002',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/BadRuns/", "Hindcast", "Hindcast", '2002','2002',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast_02ReRun/", "Hindcast", "Hindcast", '2002','2002',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastFF", "Hindcast", '1992','1992',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/HindcastFF/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "HindcastFF", "Hindcast", '1990','1990',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast_CFC113/", "Hindcast", "Hindcast", '2004','2004',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/", "Hindcast", "Hindcast", '2009','2010',1,1
+
+
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/Spinup/", "/discover/nobackup/mrdamon/WORKFLOW-discover/testColDiag4/", "HindcastSpinup", "HindcastSpinupTest", '1993','1993',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/Spinup", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast/noGCRs", "HindcastSpinup", "HindcastSpinupNoGCR", '1994','1994',1,1
+
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65totacet/", "fastJX", "fastJX65", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65acet/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65totacet/", "fastJX65", "fastJX65", '2005','2005',1,1
+
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65/", "fastJX", "fastJX65", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX65/", "/discover/nobackup/jkouatch/GMI/combo/fastJX65/runJX/", "fastJX65", "fastJX", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "/archive/anon/pub/gmidata2/users/mrdamon/HindcastSpinup", "MERRA", "HindcastSpinup", '2005','1991',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "/discover/nobackup/mrdamon/GMI_runs/HindcastSpinupTest/completed", "MERRA", "HINDCAST", '2004','1990',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/MerraDuncan/", "/archive/anon/pub/gmidata2/users/mrdamon/MerraStrode/", "MerraDuncan", "MerraStrode", '2005','2005',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/LightningTest/completed_noBug/", "/discover/nobackup/mrdamon/GMI_runs/LightningTest/completed", "noBugLight", "newLightMERRA", '2004','2004',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "/discover/nobackup/mrdamon/GMI_runs/LightningTest/completed", "MERRA", "newLightMERRA", '2004','2004',1,1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/Aura4AerosolTestOnlySO14/completed/", "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final", "Aura4SO14", "Aura4COStreets", '2007','2007', 1, 1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/Aura4AerosolTestOnlySO14/completed/", "/discover/nobackup/mrdamon/GMI_runs/Aura4AerosolTest/completed/", "Aura4SO14", "Aura4Aerosol", '2007','2007', 1, 1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/Aura4AerosolTest/completed/", "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final/", "Aura4Aerosol", "Aura4COStreets", '2007','2007', 1, 1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final/", "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI0368_Aura4COStreetsNewCode/thirdMergeSteenrodAndTrunk/completed/", "Aura4COStreets", "Aura4COStreetsNewCode", '2004','2004', 1, 1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/Aura4OldCodeTest/", "/discover/nobackup/mrdamon/GMI_runs/Aura4NewCodeTest/", "Aura4Synoz", "Aura4COStreetsNewCode", '2004','2004', 1, 1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/Temp/MERRA_coupled/", "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "MERRA_coupled2", "MERRA", '2006','2006', 1, 1
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/GMI_runs/Aura4NewCodeTest/", "/discover/nobackup/mrdamon/GMI_runs/Aura4OldCodeTest/", "Aura4COStreetsNewCode", "Aura4Synoz", '2004','2004', 1, 1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/output/gmic/G5Aura/", "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "G5aura", "MERRA", '2005','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/steenrod/polmip/", "/archive/anon/pub/gmidata2/users/steenrod/MERRA/", "polmip_take2", "MERRA", '2007','2007',1,1
+
+
+GmiDoAllPlots, "/discover/nobackup/mrdamon/WORKFLOW-discover/GMI0343_Aura4COStreets/fixedBugsRelatedToG4DAS/completed", "/discover/nobackup/projects/gmi/gmidata2/users/steenrod/MERRA", "Aura4COStreets", "MERRA", '2006','2006',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final/", "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final", "Aura4COStreets", "Aura4COStreets", '2004','2005',1,1
+
+GmiDoAllPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Aura4-Final/", "/archive/anon/pub/gmidata2/users/mrdamon/Aura4", "Aura4COStreets", "Aura4Synoz", '2004','2004',1,1
