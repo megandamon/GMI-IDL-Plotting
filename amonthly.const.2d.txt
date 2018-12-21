@@ -40,6 +40,7 @@ fSO4n1
 fSO4n2
 fSO4n3
 H
+HAC
 H2
 H2402 
 H2O 
@@ -93,3 +94,4 @@ SSLT3
 SSLT4 
 SYNOZ 
 Total density 
+VRP

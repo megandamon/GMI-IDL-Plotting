@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-export dateString=mar
+export dateString=dec
 
 #flnames=( overheadO3col cloudOptDepth OptDepth ColumnMass const surf_emiss dry_depos wet_depos )
 flnames=( const surf_emiss )

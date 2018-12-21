@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-export dateString=mar
+export dateString=dec
 
 flnames=( ColumnMass OptDepth )
 for flname in "${flnames[@]}"

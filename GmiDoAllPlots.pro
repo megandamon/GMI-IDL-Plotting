@@ -11,7 +11,7 @@ pro GmiDoAllPlots, dir1, dir2, exp1, exp2, year1, year2, postScript, diag
 
     ; create file name for each month
     ;months = ['jan','', 'jul', 'oct']
-    months = ['mar']
+    months = ['dec']
     i = 0
     while (i lt n_elements(months)) do begin
         month = months[i]
@@ -23,6 +23,7 @@ pro GmiDoAllPlots, dir1, dir2, exp1, exp2, year1, year2, postScript, diag
         ;fileString2 = dir2 + '/'+ year2 + '/gmic_' + exp2 + '_' + year2 + '_' + month
         fileString1 = dir1 + '/'+ year1 + '/' + exp1 + '_' + year1 + '_' + month
         fileString2 = dir2 + '/'+ year2 + '/' + exp2 + '_' + year2 + '_' + month
+        ;fileString2 = dir2 + '/'+ year2 + '/' + exp2 + '_' + year2 + '_' + 'oct' 
 
         ; restart file1
         file1 = fileString1 + '.rst.nc'
@@ -30,8 +31,8 @@ pro GmiDoAllPlots, dir1, dir2, exp1, exp2, year1, year2, postScript, diag
         checkFile, file1, diag
         checkFile, file2, diag
         plot3DSpecies, file1, file2, exp1, exp2, "const", "const_labels", month, year1, year2, $
-                       postScript, diag, stratSpeciesFile='amonthly.const.strat.txt', tropSpeciesFile='amonthly.const.trop.txt', $
-                       species2DFile='amonthly.const.2d.txt'
+                      postScript, diag, stratSpeciesFile='amonthly.const.strat.txt', tropSpeciesFile='amonthly.const.trop.txt', $
+                      species2DFile='amonthly.const.2d.txt'
 	stop
 	
 
@@ -40,11 +41,11 @@ pro GmiDoAllPlots, dir1, dir2, exp1, exp2, year1, year2, postScript, diag
         file2 = fileString2 + '.adaily.nc'
         file1 = fileString1 + '.amonthly.nc'
         file2 = fileString2 + '.amonthly.nc'
-        ;checkFile, file1, diag
-        ;checkFile, file2, diag
-        ;GmiAmonthly, file1, file2, exp1, exp2, month, year1, year2, postScript, diag
+        checkFile, file1, diag
+        checkFile, file2, diag
+        GmiAmonthly, file1, file2, exp1, exp2, month, year1, year2, postScript, diag
 	
-	;stop
+	stop
 
         ; column file
         file1 = fileString1 + '.column.nc'

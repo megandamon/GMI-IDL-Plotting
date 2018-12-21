@@ -1,4 +1,4 @@
-module load tool/idl-7.1
+module load tool/idl-8.5
 ulimit -s 6000000
 ulimit -v unlimited
 idl

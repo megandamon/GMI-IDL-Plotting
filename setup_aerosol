@@ -1,4 +1,4 @@
-module load tool/idl-7.1
+module load tool/idl-8.5
 ulimit -s 6000000
 ulimit -v unlimited
 idl
@@ -18,6 +18,13 @@ idl
 .r GmiStations.pro
 .r GmiAerosolPlots.pro
 xlct
+
+GmiAerosolPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastMR2/Tests/SolarCycleIncomplete/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastMR2/Tests/SolarCycleIncomplete-AerDust/", 'gmic_HindcastMR2-SolarCycle', 'gmic_HindcastMR2-SolarCycle-AerDust', '1990', '1990', 1,1
+
+GmiAerosolPlots, "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/Hindcast-CCMI-Rerun/", "/archive/anon/pub/gmidata2/users/mrdamon/Hindcast-Family/HindcastMR2/", 'gmic_Hindcast-CCMI', 'gmic_HindcastMR2', '1989', '1989', 1,1
+
+GmiAerosolPlots, "/archive/anon/pub/gmidata2/users/mrdamon/FastJX-RepairOD-Tests/HFFIgac2-Reproduce/", "/archive/anon/pub/gmidata2/users/mrdamon/FastJX-RepairOD-Tests/HFFIgac2-RepairOD/", "gmic_HFFIgac2-Reproduce", 'gmic_HFFIgac2-RepairOD','2010','2010',1,1
+
 
 GmiAerosolPlots, "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/gmi_randomCloudOverlap/", "/discover/nobackup/projects/gmi/gmidata2/users/mrdamon/WORKFLOW-discover/Optdepth-Random-Cloud/", 'gmic_HindcastFFIgac2-RanCloud', 'gmic_HindcastFFIgac2-HighRes', '1990','1990',1,1
 

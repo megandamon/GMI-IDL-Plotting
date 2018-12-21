@@ -10,7 +10,7 @@ pro GmiPlotIdailySpecies, dir1, dir2, exp1, exp2, year1, year2, refMonth, postSc
    !p.font=0
 
     ; create file name for each month
-    months = ['oct']
+    months = ['jan']
     i = 0
     while (i lt n_elements(months)) do begin
         month = months[i]
